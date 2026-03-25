@@ -272,13 +272,27 @@ body {
     transform: translateY(-5px);
 }
 
+/* Updated to handle real images instead of emojis */
 .card-img {
-    height: 150px;
-    background: #F1F2F6;
+    height: 160px;
+    width: 100%;
+    background: #f0f0f0;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover .card-img img {
+    transform: scale(1.1);
 }
 
 .card-info { padding: 15px; }
@@ -691,4 +705,100 @@ body {
 @keyframes fadeOutRight {
     from { transform: translateX(0); opacity: 1; }
     to { transform: translateX(120%); opacity: 0; }
+}
+
+/* ==========================================
+   ABOUT PAGE UPGRADED STYLES
+   ========================================== */
+
+.about-card-split {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    line-height: 1.8;
+    color: #555;
+    font-size: 16px;
+}
+
+.about-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.magic-box {
+    width: 250px;
+    height: 250px;
+    background: var(--light-orange);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.grid-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--primary-orange);
+}
+
+.grid-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.grid-item h3 {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.grid-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .about-card-split {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
 }

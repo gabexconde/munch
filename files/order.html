@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>munch.</title>
+    <title>munch. - Order Now</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    
 </head>
 <body>
 
 <nav class="navbar">
-        <div class="logo">
-    <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
-            </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="order.html" class="active">Order</a>
-            <a href="promos.html">Promos</a>
-            <a href="about.html">About</a>
-        </div>
-        <div class="user-profile">
-    <a href="developers.html" class="dev-info-icon" title="About Developers">i</a>
-</div>
-    </nav>
+    <div class="logo">
+        <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="order.html" class="active">Order</a>
+        <a href="promos.html">Promos</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="user-profile">
+        <a href="developers.html" class="dev-info-icon" title="About Developers">i</a>
+    </div>
+</nav>
 
-    <div class="dashboard-layout">
-        
-        <main class="main-content">
-            <section class="banner">
+<div class="dashboard-layout">
+    <main class="main-content">
+        <section class="banner">
             <div>
                 <p>Limited time! Lent Season Special</p>
                 <h2>Get Mahal na Araw Discount <strong>40%</strong></h2>
@@ -38,9 +35,9 @@
             <div style="font-size: 80px;">✝️</div>
         </section>
 
-            <h3 style="margin-bottom: 15px;">Menu Categories</h3>
-        
-       <div class="category-filters">
+        <h3 style="margin-bottom: 15px;">Menu Categories</h3>
+    
+        <div class="category-filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="popular">🔥 Popular</button>
             <button class="filter-btn" data-filter="mains">🍛 Mains</button>
@@ -48,36 +45,35 @@
             <button class="filter-btn" data-filter="desserts">🍰 Desserts</button>
             <button class="filter-btn" data-filter="drinks">🥤 Drinks</button>
         </div>
-        
-     <div class="food-grid">
-            
+    
+        <div class="food-grid">
             <div class="food-card" data-category="popular">
-                <div class="card-img" style="background: #FFEAA7;">🍜</div>
+                <div class="card-img"><img src="images/popular-20260325T072450Z-3-001/spicy-shoyu-ramen-5.webp" alt="Ramen"></div>
                 <div class="card-info">
                     <h4>Spicy Shoyu Ramen</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 30mins</p>
+                    <p style="font-size: 12px; color: #999;">30mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$11.50</strong>
-                        <button onclick="addOrder('Spicy Ramen', 'Popular', 11.50, 1, 30, 4.9)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Spicy Shoyu Ramen', 'Popular', 11.50, 1, 30, 4.9)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
             <div class="food-card" data-category="popular">
-                <div class="card-img" style="background: #FFDFD3;">🍗</div>
+                <div class="card-img"><img src="images/popular-20260325T072450Z-3-001/Drumsticks-liquidation-plan-05.jpg" alt="Chicken"></div>
                 <div class="card-info">
                     <h4>Crispy Fried Chicken</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 25mins</p>
+                    <p style="font-size: 12px; color: #999;">25mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$14.00</strong>
-                        <button onclick="addOrder('Fried Chicken', 'Popular', 14.00, 1, 25, 4.8)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Crispy Fried Chicken', 'Popular', 14.00, 1, 25, 4.8)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
             <div class="food-card" data-category="popular">
-                <div class="card-img" style="background: #DFF9FB;">🍣</div>
+                <div class="card-img"><img src="images/popular-20260325T072450Z-3-001/prod_calimaki.webp" alt="Maki"></div>
                 <div class="card-info">
                     <h4>California Maki</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 20mins</p>
+                    <p style="font-size: 12px; color: #999;">20mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$9.50</strong>
                         <button onclick="addOrder('California Maki', 'Popular', 9.50, 1, 20, 4.7)" class="btn-add-card">+</button>
@@ -85,10 +81,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="popular">
-                <div class="card-img" style="background: #FAD390;">🍖</div>
+                <div class="card-img"><img src="images/popular-20260325T072450Z-3-001/BEEF-SALPICAO.jpg" alt="Salpicao"></div>
                 <div class="card-info">
                     <h4>Beef Salpicao</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 35mins</p>
+                    <p style="font-size: 12px; color: #999;">35mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$15.50</strong>
                         <button onclick="addOrder('Beef Salpicao', 'Popular', 15.50, 1, 35, 4.9)" class="btn-add-card">+</button>
@@ -96,44 +92,44 @@
                 </div>
             </div>
             <div class="food-card" data-category="popular">
-                <div class="card-img" style="background: #F8A5C2;">🍱</div>
+                <div class="card-img"><img src="images/popular-20260325T072450Z-3-001/sisig.jpg" alt="Sisig"></div>
                 <div class="card-info">
                     <h4>Pork Sisig Bento</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 25mins</p>
+                    <p style="font-size: 12px; color: #999;">25mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$10.00</strong>
-                        <button onclick="addOrder('Pork Sisig', 'Popular', 10.00, 1, 25, 4.8)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Pork Sisig Bento', 'Popular', 10.00, 1, 25, 4.8)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
 
             <div class="food-card" data-category="mains">
-                <div class="card-img" style="background: #FFDFD3;">🍔</div>
+                <div class="card-img"><img src="images/mains/Double-Cheeseburger-square-FS-42.webp" alt="Burger"></div>
                 <div class="card-info">
                     <h4>Double Cheese Burger</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 20mins</p>
+                    <p style="font-size: 12px; color: #999;">20mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$8.50</strong>
-                        <button onclick="addOrder('Cheese Burger', 'Mains', 8.50, 1, 20, 4.7)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Double Cheese Burger', 'Mains', 8.50, 1, 20, 4.7)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
             <div class="food-card" data-category="mains">
-                <div class="card-img" style="background: #FFEAA7;">🍝</div>
+                <div class="card-img"><img src="images/mains/Garlic-Shrimp-Pasta-6.jpg" alt="Pasta"></div>
                 <div class="card-info">
                     <h4>Garlic Seafood Pasta</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 25mins</p>
+                    <p style="font-size: 12px; color: #999;">25mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$12.50</strong>
-                        <button onclick="addOrder('Seafood Pasta', 'Mains', 12.50, 1, 25, 4.8)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Garlic Seafood Pasta', 'Mains', 12.50, 1, 25, 4.8)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
             <div class="food-card" data-category="mains">
-                <div class="card-img" style="background: #FAD390;">🍕</div>
+                <div class="card-img"><img src="images/mains/pepperoni_pizza_standard.jpg" alt="Pizza"></div>
                 <div class="card-info">
                     <h4>Pepperoni Pizza</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 35mins</p>
+                    <p style="font-size: 12px; color: #999;">35mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$14.00</strong>
                         <button onclick="addOrder('Pepperoni Pizza', 'Mains', 14.00, 1, 35, 4.6)" class="btn-add-card">+</button>
@@ -141,10 +137,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="mains">
-                <div class="card-img" style="background: #DFF9FB;">🥗</div>
+                <div class="card-img"><img src="images/mains/post workout.jpg" alt="Bowl"></div>
                 <div class="card-info">
                     <h4>Post-Workout Chicken Bowl</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 20mins</p>
+                    <p style="font-size: 12px; color: #999;">20mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$13.00</strong>
                         <button onclick="addOrder('Chicken Bowl', 'Mains', 13.00, 1, 20, 4.9)" class="btn-add-card">+</button>
@@ -152,22 +148,22 @@
                 </div>
             </div>
             <div class="food-card" data-category="mains">
-                <div class="card-img" style="background: #81ECEC;">🍛</div>
+                <div class="card-img"><img src="images/mains/Indian-vegetable-curry.jpg" alt="Curry"></div>
                 <div class="card-info">
                     <h4>Vegetable Curry</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 30mins</p>
+                    <p style="font-size: 12px; color: #999;">30mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$10.50</strong>
-                        <button onclick="addOrder('Veggie Curry', 'Mains', 10.50, 1, 30, 4.7)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Vegetable Curry', 'Mains', 10.50, 1, 30, 4.7)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
 
             <div class="food-card" data-category="sides">
-                <div class="card-img" style="background: #FAD390;">🍟</div>
+                <div class="card-img"><img src="images/sides-20260325T072417Z-3-001/fries.jpg" alt="Fries"></div>
                 <div class="card-info">
                     <h4>Crispy French Fries</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 15mins</p>
+                    <p style="font-size: 12px; color: #999;">15mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$3.50</strong>
                         <button onclick="addOrder('French Fries', 'Sides', 3.50, 1, 15, 4.6)" class="btn-add-card">+</button>
@@ -175,10 +171,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="sides">
-                <div class="card-img" style="background: #FFDFD3;">🌮</div>
+                <div class="card-img"><img src="images/sides-20260325T072417Z-3-001/nachos din.jpg" alt="Nachos"></div>
                 <div class="card-info">
                     <h4>Late Night Gaming Nachos</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 20mins</p>
+                    <p style="font-size: 12px; color: #999;">20mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$6.50</strong>
                         <button onclick="addOrder('Gaming Nachos', 'Sides', 6.50, 1, 20, 4.8)" class="btn-add-card">+</button>
@@ -186,10 +182,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="sides">
-                <div class="card-img" style="background: #DFF9FB;">🥗</div>
+                <div class="card-img"><img src="images/sides-20260325T072417Z-3-001/Garden-salad-thumbnail.jpg" alt="Salad"></div>
                 <div class="card-info">
                     <h4>Fresh Garden Salad</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 15mins</p>
+                    <p style="font-size: 12px; color: #999;">15mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$7.00</strong>
                         <button onclick="addOrder('Garden Salad', 'Sides', 7.00, 1, 15, 4.9)" class="btn-add-card">+</button>
@@ -197,10 +193,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="sides">
-                <div class="card-img" style="background: #FFEAA7;">🥖</div>
+                <div class="card-img"><img src="images/sides-20260325T072417Z-3-001/Garlic-Cheese-Monkey-Bread-5-scaled.jpg" alt="Bread"></div>
                 <div class="card-info">
                     <h4>Cheesy Garlic Bread</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 15mins</p>
+                    <p style="font-size: 12px; color: #999;">15mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$4.00</strong>
                         <button onclick="addOrder('Garlic Bread', 'Sides', 4.00, 1, 15, 4.7)" class="btn-add-card">+</button>
@@ -208,22 +204,22 @@
                 </div>
             </div>
             <div class="food-card" data-category="sides">
-                <div class="card-img" style="background: #81ECEC;">🦑</div>
+                <div class="card-img"><img src="images/sides-20260325T072417Z-3-001/Calamari-5.jpg" alt="Calamari"></div>
                 <div class="card-info">
                     <h4>Crispy Calamari</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 20mins</p>
+                    <p style="font-size: 12px; color: #999;">20mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$8.00</strong>
-                        <button onclick="addOrder('Calamari', 'Sides', 8.00, 1, 20, 4.8)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Crispy Calamari', 'Sides', 8.00, 1, 20, 4.8)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
 
             <div class="food-card" data-category="desserts">
-                <div class="card-img" style="background: #F8A5C2;">🍰</div>
+                <div class="card-img"><img src="images/deseserts-20260325T072513Z-3-001/strawberry cake.jpg" alt="Cake"></div>
                 <div class="card-info">
                     <h4>Strawberry Cake</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$5.50</strong>
                         <button onclick="addOrder('Strawberry Cake', 'Desserts', 5.50, 1, 10, 4.9)" class="btn-add-card">+</button>
@@ -231,10 +227,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="desserts">
-                <div class="card-img" style="background: #55E6C1;">🍫</div>
+                <div class="card-img"><img src="images/deseserts-20260325T072513Z-3-001/brownies.jpg" alt="Brownie"></div>
                 <div class="card-info">
                     <h4>Fudge Brownie</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$3.50</strong>
                         <button onclick="addOrder('Fudge Brownie', 'Desserts', 3.50, 1, 10, 4.8)" class="btn-add-card">+</button>
@@ -242,10 +238,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="desserts">
-                <div class="card-img" style="background: #FAD390;">🍮</div>
+                <div class="card-img"><img src="images/deseserts-20260325T072513Z-3-001/leche-flan-recipe.jpg" alt="Flan"></div>
                 <div class="card-info">
                     <h4>Classic Leche Flan</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 15mins</p>
+                    <p style="font-size: 12px; color: #999;">15mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$4.00</strong>
                         <button onclick="addOrder('Leche Flan', 'Desserts', 4.00, 1, 15, 4.9)" class="btn-add-card">+</button>
@@ -253,10 +249,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="desserts">
-                <div class="card-img" style="background: #FFEAA7;">🥭</div>
+                <div class="card-img"><img src="images/deseserts-20260325T072513Z-3-001/mango-float-featured.webp" alt="Graham"></div>
                 <div class="card-info">
                     <h4>Mango Graham</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 15mins</p>
+                    <p style="font-size: 12px; color: #999;">15mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$5.00</strong>
                         <button onclick="addOrder('Mango Graham', 'Desserts', 5.00, 1, 15, 4.8)" class="btn-add-card">+</button>
@@ -264,22 +260,22 @@
                 </div>
             </div>
             <div class="food-card" data-category="desserts">
-                <div class="card-img" style="background: #DFF9FB;">🍨</div>
+                <div class="card-img"><img src="images/deseserts-20260325T072513Z-3-001/Fried-Ice-Cream-Sundaes-3227.jpg" alt="Sundae"></div>
                 <div class="card-info">
                     <h4>Ice Cream Sundae</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$4.50</strong>
-                        <button onclick="addOrder('Ice Cream Sundae', 'Desserts', 4.50, 1, 10, 4.7)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Sundae', 'Desserts', 4.50, 1, 10, 4.7)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
 
             <div class="food-card" data-category="drinks">
-                <div class="card-img" style="background: #81ECEC;">🥤</div>
+                <div class="card-img"><img src="images/drinks-20260325T072619Z-3-001/iced caramel m.jpg" alt="Coffee"></div>
                 <div class="card-info">
                     <h4>Iced Caramel Macchiato</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$4.25</strong>
                         <button onclick="addOrder('Caramel Macchiato', 'Drinks', 4.25, 1, 10, 4.8)" class="btn-add-card">+</button>
@@ -287,21 +283,21 @@
                 </div>
             </div>
             <div class="food-card" data-category="drinks">
-                <div class="card-img" style="background: #FFEAA7;">🧋</div>
+                <div class="card-img"><img src="images/drinks-20260325T072619Z-3-001/Classic-Milk-Tea-with-Pearls.jpg" alt="Milk Tea"></div>
                 <div class="card-info">
                     <h4>Classic Milk Tea</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$3.75</strong>
-                        <button onclick="addOrder('Milk Tea', 'Drinks', 3.75, 1, 10, 4.7)" class="btn-add-card">+</button>
+                        <button onclick="addOrder('Classic Milk Tea', 'Drinks', 3.75, 1, 10, 4.7)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
             <div class="food-card" data-category="drinks">
-                <div class="card-img" style="background: #FAD390;">🥭</div>
+                <div class="card-img"><img src="images/drinks-20260325T072619Z-3-001/mango_shake_01.png" alt="Mango Shake"></div>
                 <div class="card-info">
                     <h4>Fresh Mango Shake</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$4.00</strong>
                         <button onclick="addOrder('Mango Shake', 'Drinks', 4.00, 1, 10, 4.9)" class="btn-add-card">+</button>
@@ -309,10 +305,10 @@
                 </div>
             </div>
             <div class="food-card" data-category="drinks">
-                <div class="card-img" style="background: #DFF9FB;">🍋</div>
+                <div class="card-img"><img src="images/drinks-20260325T072619Z-3-001/lemonade.jpg" alt="Lemonade"></div>
                 <div class="card-info">
                     <h4>House Lemonade</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$2.50</strong>
                         <button onclick="addOrder('Lemonade', 'Drinks', 2.50, 1, 10, 4.6)" class="btn-add-card">+</button>
@@ -320,129 +316,88 @@
                 </div>
             </div>
             <div class="food-card" data-category="drinks">
-                <div class="card-img" style="background: #FFDFD3;">☕</div>
+                <div class="card-img"><img src="images/drinks-20260325T072619Z-3-001/Iced_Americano.jpg" alt="Americano"></div>
                 <div class="card-info">
                     <h4>Iced Americano</h4>
-                    <p style="font-size: 12px; color: #999;">Delivery in 10mins</p>
+                    <p style="font-size: 12px; color: #999;">10mins</p>
                     <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
                         <strong style="font-size: 18px;">$3.00</strong>
                         <button onclick="addOrder('Iced Americano', 'Drinks', 3.00, 1, 10, 4.8)" class="btn-add-card">+</button>
                     </div>
                 </div>
             </div>
+        </div> 
+    </main>
 
-      
-
-        </div>  
-
-
-        </main>
-
-        <aside class="order-panel">
-            <div class="panel-header">Order Detail</div>
-            
-            <div class="order-list" id="tableBody">
-                <div id="emptyMessage" style="text-align: center; color: #999; margin-top: 50px;">
-                    No items in cart.
-                </div>
+    <aside class="order-panel">
+        <div class="panel-header">Order Detail</div>
+        <div class="order-list" id="tableBody">
+            <div id="emptyMessage" style="text-align: center; color: #999; margin-top: 50px;">
+                No items in cart.
             </div>
+        </div>
 
-            <div class="bill-summary" style="border-top: 1px solid #EEE; padding-top: 20px;">
+        <div class="bill-summary" style="border-top: 1px solid #EEE; padding-top: 20px;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                 <span>Total Items</span>
                 <span id="totalOrders">0</span>
             </div>
-
             <div id="couponContainer" style="display: none; margin-bottom: 15px;">
                 <label style="font-size: 12px; font-weight: 600; color: #999;">Apply Coupon:</label>
                 <select id="couponSelect" onchange="applyCoupon(this.value)" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
                     <option value="0">No coupon applied</option>
-                    </select>
+                </select>
             </div>
-
             <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 20px;">
                 <span>Total</span>
                 <span id="totalCost" style="color: var(--primary-orange);">$0.00</span>
             </div>
             <button class="btn-track" onclick="openCheckout()">Checkout</button>
         </div>
-        </aside>
+    </aside>
+</div>
 
-        <div id="couponModal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-icon">🎁</div>
-            <h2 id="modalCouponTitle">Claim Coupon?</h2>
-            <p id="modalCouponDesc" style="color: #666; margin: 15px 0 25px 0; font-size: 14px;">
-                Add this discount to your wallet to use on your next order!
-            </p>
-            <button class="btn-confirm-claim" onclick="confirmClaim()">Yes, Claim It!</button>
-            <br>
-            <button class="btn-cancel-claim" onclick="closeModal()">Maybe Later</button>
+<div id="checkoutModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 500px; text-align: left;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0;">Checkout Summary 🧾</h2>
+            <span onclick="closeCheckout()" style="cursor: pointer; font-size: 24px;">&times;</span>
         </div>
-    </div>
 
-   <div id="checkoutModal" class="modal-overlay">
-        <div class="modal-content" style="max-width: 450px; text-align: left; max-height: 90vh; overflow-y: auto;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <h2 style="color: var(--text-dark);">Checkout 🧾</h2>
-                <button onclick="closeCheckout()" style="background: none; border: none; font-size: 20px; cursor: pointer;">✕</button>
-            </div>
-            
-            <form id="checkoutForm" onsubmit="event.preventDefault();" style="margin-bottom: 20px;">
-                <h4 style="margin-bottom: 10px; color: var(--primary-orange);">Delivery Details</h4>
-                <div style="margin-bottom: 10px;">
-                    <label style="font-size: 13px; font-weight: 600;">Full Name</label>
-                    <input type="text" id="custName" placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label style="font-size: 13px; font-weight: 600;">Delivery Address</label>
-                    <input type="text" id="custAddress" placeholder="Enter complete address" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
-                </div>
-                <div>
-                    <label style="font-size: 13px; font-weight: 600;">Phone Number</label>
-                    <input type="number" id="custPhone" placeholder="09xxxxxxxxx" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
-                </div>
-            </form>
-
-            <h4 style="margin-bottom: 10px; color: var(--primary-orange);">Order Summary</h4>
-            
-            <table style="width: 100%; text-align: left; border-collapse: collapse; margin-bottom: 15px;">
-                <thead>
-                    <tr style="border-bottom: 2px solid #eee; color: var(--text-light); font-size: 13px;">
-                        <th style="padding-bottom: 8px;">Item</th>
-                        <th style="padding-bottom: 8px;">Qty</th>
-                        <th style="padding-bottom: 8px; text-align: right;">Price</th>
-                    </tr>
-                </thead>
-                <tbody id="checkoutTableBody">
-                    </tbody>
-            </table>
-
-            <div style="border-top: 2px dashed #EEE; padding-top: 15px; font-size: 14px;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                    <span>Subtotal</span>
-                    <span id="summarySubtotal">$0.00</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                    <span>Delivery Fee</span>
-                    <span>$2.00</span>
-                </div>
-                <div id="summaryDiscountRow" style="display: none; justify-content: space-between; margin-bottom: 8px; color: #27AE60; font-weight: 600;">
-                    <span>Discount Applied</span>
-                    <span id="summaryDiscountAmount">-$0.00</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 20px; font-weight: 800; color: var(--text-dark);">
-                    <span>Total</span>
-                    <span id="summaryTotal" style="color: var(--primary-orange);">$0.00</span>
-                </div>
-            </div>
-
-            <button class="btn-confirm-claim" onclick="placeOrder()" style="margin-top: 20px;">Confirm & Place Order</button>
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="custName" placeholder="Full Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #DDD;">
+            <input type="text" id="custAddress" placeholder="Delivery Address" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #DDD;">
+            <input type="text" id="custPhone" placeholder="Phone Number" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #DDD;">
         </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+            <tbody id="checkoutTableBody"></tbody>
+        </table>
+
+        <div style="border-top: 2px dashed #EEE; padding-top: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span>Subtotal</span>
+                <span id="summarySubtotal">$0.00</span>
+            </div>
+            <div id="summaryDiscountRow" style="display: none; justify-content: space-between; color: #27AE60;">
+                <span>Discount Applied</span>
+                <span id="summaryDiscountAmount">-$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span>Delivery Fee</span>
+                <span>$2.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 20px; font-weight: 800;">
+                <span>Total</span>
+                <span id="summaryTotal" style="color: var(--primary-orange);">$0.00</span>
+            </div>
+        </div>
+
+        <button class="btn-confirm-claim" onclick="placeOrder()" style="margin-top: 20px; width: 100%;">Confirm Order</button>
     </div>
+</div>
 
-    <div id="toastContainer" class="toast-container"></div>
-
-    </div> <script src="script.js"></script>
+<div id="toastContainer" class="toast-container"></div>
+<script src="script.js"></script>
 </body>
 </html>

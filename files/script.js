@@ -338,4 +338,82 @@ function placeOrder() {
     activeDiscount = 0;
     localStorage.setItem('foodhub_active_discount', 0);
     renderCouponDropdown();
+
+    // ==========================================
+// CHECKOUT & MODAL LOGIC
+// ==========================================
+
+function openCheckout() {
+    // Check kung may order bago buksan ang modal
+    if (orders.length === 0) {
+        showToast("Your cart is empty!", "error");
+        return;
+    }
+
+    const modal = document.getElementById('checkoutModal');
+    const tableBody = document.getElementById('checkoutTableBody');
+    
+    // Linisin ang table
+    tableBody.innerHTML = '';
+    let subtotal = 0;
+
+    orders.forEach(item => {
+        subtotal += item.subtotal;
+        const row = `
+            <tr>
+                <td style="padding: 8px 0;">${item.foodName} (x${item.quantity})</td>
+                <td style="text-align: right; padding: 8px 0;">$${item.subtotal.toFixed(2)}</td>
+            </tr>
+        `;
+        tableBody.innerHTML += row;
+    });
+
+    // Breakdown computation
+    const deliveryFee = 2.00;
+    const discountAmount = subtotal * (activeDiscount / 100);
+    const finalTotal = (subtotal - discountAmount) + deliveryFee;
+
+    // Update Modal UI
+    document.getElementById('summarySubtotal').textContent = `$${subtotal.toFixed(2)}`;
+    
+    const discountRow = document.getElementById('summaryDiscountRow');
+    if (activeDiscount > 0) {
+        discountRow.style.display = 'flex';
+        document.getElementById('summaryDiscountAmount').textContent = `-$${discountAmount.toFixed(2)}`;
+    } else {
+        discountRow.style.display = 'none';
+    }
+
+    document.getElementById('summaryTotal').textContent = `$${finalTotal.toFixed(2)}`;
+    modal.style.display = 'flex';
+}
+
+function closeCheckout() {
+    document.getElementById('checkoutModal').style.display = 'none';
+}
+
+// Function para sa Confirm & Place Order button sa loob ng modal
+function placeOrder() {
+    const name = document.getElementById('custName').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+
+    if (name === '' || address === '' || phone === '') {
+        showToast("Please fill in all delivery details.", "error");
+        return;
+    }
+
+    showToast(`Order confirmed for ${name}! 🚀`, "success");
+
+    // Reset lahat pagkatapos ng order
+    orders = [];
+    activeDiscount = 0;
+    localStorage.setItem('foodhub_orders', JSON.stringify(orders));
+    localStorage.setItem('foodhub_active_discount', 0);
+    
+    renderTable(); // I-update ang cart view
+    updateStats(); // I-update ang total displays
+    closeCheckout();
+}
+
 }
