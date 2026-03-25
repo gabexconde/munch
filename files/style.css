@@ -1,0 +1,694 @@
+:root {
+    --primary-orange: #FF6B35;
+    --light-orange: #FFEEE8;
+    --dark-orange: #E65A2B;
+    --white: #FFFFFF;
+    --bg-gray: #F8F9FB;
+    --text-dark: #2C3E50;
+    --text-light: #95A5A6;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-gray);
+    display: flex;
+    flex-direction: column; /* Ginawang column para pumababa yung content mula sa navbar */
+    height: 100vh;
+    overflow: hidden;
+}
+/* -------------------
+   HOME BANNER LOGO 
+-------------------- */
+/* -------------------
+   HOME BANNER LOGO 
+-------------------- */
+/* -------------------
+   HOME BANNER LOGO 
+-------------------- */
+/* -------------------
+   HOME BANNER LOGO 
+-------------------- */
+/* -------------------
+   HOME BANNER LOGO 
+-------------------- */
+.homebanner {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;       
+    font-weight: 800;
+    position: relative;
+    margin-bottom: 30px;   /* ⚠️ ETO YUNG FIX: Itutulak nito pababa yung "Satisfy Your Cravings" para hindi bumangga sa logo */
+}
+
+.homebanner img {
+    height: 280px;         
+    width: auto;
+    object-fit: contain;
+    margin-top: -150px;    /* ⚠️ Aangat yung logo sa labas ng banner */
+    margin-bottom: -10px;  /* ⚠️ Hihilahin lang yung salitang "munch." pataas para dumikit sa logo */
+    z-index: 10;
+    position: relative;
+}
+
+
+.promotex{
+    margin-top: 150px;
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+    color: #FF6B35;
+}
+/* -------------------
+   TOP NAVBAR 
+-------------------- */
+
+/* -------------------
+   LOGO IMAGE STYLING
+-------------------- */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 50px; /* Saktong height para sa 80px na navbar */
+    width: auto;  /* Para hindi mapitpit ang image */
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Kaunting zoom pag hinover ang logo */
+}
+
+.navbar {
+    background: var(--white);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    flex-shrink: 0; /* Ensures navbar doesn't shrink */
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--primary-orange);
+}
+
+/* -------------------
+   LAYOUT CONTAINER 
+-------------------- */
+.dashboard-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Allows inner scrolling */
+}
+
+/* -------------------
+   MAIN CONTENT 
+-------------------- */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* -------------------
+   BANNER 
+-------------------- */
+
+.banner {
+    background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+    border-radius: 25px;
+    padding: 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+    position: relative; /* Needed for the sun overlap */
+    overflow: hidden; /* Keeps the sun inside the banner */
+}
+
+/* The "Sun" Overlap Effect */
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: -80px; 
+    right: -20px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.15); /* Soft white glow */
+    border-radius: 50%;
+    pointer-events: none; 
+}
+
+/* Ensure text and buttons stay above the sun */
+.banner > div {
+    position: relative;
+    z-index: 1;
+}
+
+.banner h2 { font-size: 32px; margin-bottom: 10px; }
+.banner .claim-btn {
+    background: white;
+    color: var(--primary-orange);
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+    z-index: 1;
+}
+
+.banner .claim-btn:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* -------------------
+   CATEGORY FILTERS
+-------------------- */
+.category-filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px; 
+    margin-bottom: 30px;
+    overflow-x: auto;
+    
+    /* THE FIX: Added padding-top so the hover effect doesn't get clipped */
+    padding-top: 10px; 
+    padding-bottom: 15px; /* Increased slightly to protect the bottom shadow too */
+    padding-left: 5px; 
+}   
+
+/* Customizing the scrollbar to make it invisible or sleek */
+.category-filters::-webkit-scrollbar {
+    height: 0px; /* Change to 4px if you want a visible scrollbar */
+}
+
+.filter-btn {
+    background: white;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Keeps the text from breaking into two lines */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    margin: 0 !important;
+    flex-shrink: 0;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary-orange);
+    color: white;
+    border-color: var(--primary-orange);
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
+}
+
+/* Food Grid */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    height: 150px;
+    background: #F1F2F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.card-info { padding: 15px; }
+
+.btn-add-card {
+    background: #2D2D3A; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    width: 32px; 
+    height: 32px; 
+    cursor: pointer; 
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.btn-add-card:hover {
+    background: var(--primary-orange);
+}
+
+/* -------------------
+   ORDER PANEL 
+-------------------- */
+.order-panel {
+    width: 380px;
+    background: var(--white);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #EEE;
+}
+
+.panel-header {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.order-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.order-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.item-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--light-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-track {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-track:hover {
+    background: var(--dark-orange);
+}
+
+/* ==========================================
+   MODAL STYLING
+   ========================================== */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    backdrop-filter: blur(4px); /* Blurs the background */
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy pop-in */
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.btn-confirm-claim {
+    background: var(--primary-orange);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-confirm-claim:hover {
+    transform: translateY(-2px);
+    background: var(--dark-orange);
+}
+
+.btn-cancel-claim {
+    background: transparent;
+    color: var(--text-light);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.btn-cancel-claim:hover {
+    color: var(--text-dark);
+}
+
+
+/* -------------------
+   NEW PAGES STYLING (Promos, Contact, About)
+-------------------- */
+.page-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+/* -------------------
+   UPDATED PROMO CARDS
+-------------------- */
+.promo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promo-card {
+    background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+    position: relative; /* Needed for the sun overlap */
+    overflow: hidden; /* Keeps the sun inside the banner */
+}
+
+/* Sun effect for Promo Cards (Smaller size) */
+.promo-card::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -10px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ensure text and buttons stay above the sun */
+.promo-card > div, .promo-card > button {
+    position: relative;
+    z-index: 1;
+}
+
+.promo-card h3 { font-size: 24px; margin-bottom: 8px; }
+.promo-card p { font-size: 14px; opacity: 0.9; max-width: 400px; }
+
+/* Info Cards for Contact & About */
+.info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.info-card h2 { color: var(--primary-orange); margin-bottom: 15px; }
+.info-card ul { list-style: none; margin-top: 15px; }
+.info-card ul li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-weight: 600; }
+.info-icon { font-size: 24px; }
+
+/* -------------------
+   DEVELOPER INFO ICON 
+-------------------- */
+.dev-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: var(--light-orange);
+    color: var(--primary-orange);
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: Georgia, serif; 
+    font-style: italic;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.dev-info-icon:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* -------------------
+   DEVELOPERS CAROUSEL 
+-------------------- */
+.dev-page {
+    flex: 1;
+    padding: 40px;
+    background: var(--bg-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Increased gap so buttons aren't too close */
+    margin-top: 30px;
+    max-width: 850px; /* 🔥 INCREASED FROM 600px TO MAKE THE CARD WIDER */
+    width: 100%;
+}
+
+.carousel-container {
+    flex: 1;
+    overflow: hidden; 
+    border-radius: 25px; /* Slightly rounder corners for the bigger card */
+    box-shadow: var(--shadow);
+    background: white;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out; 
+}
+
+.dev-card {
+    min-width: 100%; 
+    padding: 70px 50px; /* 🔥 INCREASED PADDING to make the card taller and more spacious */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dev-photo {
+    width: 180px; /* 🔥 INCREASED PHOTO SIZE (was 120px) */
+    height: 180px; 
+    background: linear-gradient(135deg, var(--light-orange), #FFDAB9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    margin-bottom: 25px;
+    border: 5px solid var(--primary-orange);
+}
+
+.dev-card h2 {
+    color: var(--text-dark);
+    font-size: 34px; /* 🔥 BIGGER NAME */
+    margin-bottom: 8px;
+}
+
+.dev-section {
+    color: var(--primary-orange);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 18px; /* Bigger course text */
+    letter-spacing: 1px;
+}
+
+.dev-role {
+    background: #F1F2F6;
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-size: 15px; /* Bigger role badge */
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.dev-desc {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 16px; /* Bigger description text */
+    max-width: 80%;
+}
+
+.carousel-btn {
+    background: white;
+    color: var(--primary-orange);
+    border: none;
+    width: 60px; /* Bigger navigation buttons */
+    height: 60px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: scale(1.1);
+}
+
+.dev-photo img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block; 
+}
+/* ==========================================
+   TOAST NOTIFICATIONS STYLING
+   ========================================== */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast {
+    background: white;
+    color: var(--text-dark);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    animation: slideInRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    border-left: 5px solid var(--primary-orange);
+}
+
+.toast.success { border-left-color: #27AE60; } /* Green */
+.toast.error { border-left-color: #E74C3C; } /* Red */
+.toast.info { border-left-color: #3498DB; } /* Blue */
+
+.toast-icon { font-size: 20px; }
+
+/* Animations */
+@keyframes slideInRight {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(120%); opacity: 0; }
+}

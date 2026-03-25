@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers - munch.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="promos.html">Promos</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="user-profile">
+            <a href="developers.html" class="dev-info-icon" title="about developers">i</a>
+        </div>
+    </nav>
+
+    <main class="dev-page">
+        <h1 class="page-title" style="text-align: center; margin-top: 20px;">Developers</h1>
+        
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="devTrack">
+                    
+                    <div class="dev-card">
+                        <div class="dev-photo">
+                            <img src="images/dev1.jpg" alt="John Harold Beladas">
+                        </div>
+                        <h2>John Harold Beladas</h2>
+                        <p class="dev-section">BSINFOTECH 2D</p>
+                        <p class="dev-role">Lead Developer / UI Design</p>
+                        <p class="dev-desc">Passionate about web development, coding in C#, and building interactive interfaces.</p>
+                    </div>
+
+                    <div class="dev-card">
+                        <div class="dev-photo">
+                            <img src="images/dev2.jpg" alt="Developer Two">
+                        </div>
+                        <h2>Gabriel AE Ron Exconde</h2>
+                        <p class="dev-section">BSINFOTECH 2D</p>
+                        <p class="dev-role">Backend / Database</p>
+                        <p class="dev-desc">Ensures everything runs smoothly behind the scenes and manages data flow.</p>
+                    </div>
+
+                    <div class="dev-card">
+                        <div class="dev-photo">
+                            <img src="images/dev3.jpg" alt="Developer Three">
+                        </div>
+                        <h2>Cyrus Taclan</h2>
+                        <p class="dev-section">BSINFOTECH 2D</p>
+                        <p class="dev-role">QA & Testing</p>
+                        <p class="dev-desc">Finds the bugs before they find you. Keeps the project polished and error-free.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

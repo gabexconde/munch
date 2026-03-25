@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>munch. - Magical Food Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="order.html">Order</a>
+            <a href="promos.html">Promos</a>
+            <a href="contact.html">Menu</a> <a href="about.html">About</a>
+        </div>
+        <div class="user-profile">
+            <a href="developers.html" class="dev-info-icon" title="About Developers">i</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout" style="display: block; overflow-y: auto;">
+        <main class="main-content" style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+            
+            <section class="banner" style="margin-top: 100px; text-align: center; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                <div class="homebanner">  <img src="images/logo.png" alt="MunchGrabz Logo"> munch.</div>
+                <div>
+                    <h2 style="font-size: 48px; margin: 10px 0;">Satisfy Your Cravings,<br><strong>Delivered Fast.</strong></h2>
+                    <p style=" font-size: 18px; color: var(--text-dark); margin-bottom: 30px;">Welcome to munch. – Your Magical Food Hub</p>
+                    <button class="claim-btn" onclick="window.location.href='order.html'" style="font-size: 20px; padding: 15px 40px;">Order Now</button>
+                </div>
+            </section>
+                <div class="promotex"> Promo Vouchers</div>
+            <section class="banner" style="margin-top: 40px;">
+                <div>
+                    <p>Limited time! Lent Season Special</p>
+                    <h2>Get Mahal na Araw Discount <strong>40%</strong></h2>
+                    <button class="claim-btn" data-id="lent" onclick="claimCoupon('lent', event)">Claim Coupon</button>
+                </div>
+                <div style="font-size: 80px;">✝️</div>
+            </section>
+
+            <section style="margin-top: 60px; text-align: center; padding: 40px; background: white; border-radius: 20px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--primary-orange); margin-bottom: 10px; font-size: 28px;">Get in Touch 📞</h3>
+                <p style="color: var(--text-dark); margin-bottom: 25px;">Have questions? We'd love to hear from you!</p>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; color: var(--text-dark); font-weight: 600;">
+                    <div>📍 San Pablo City, Calabarzon</div>
+                    <div>📱 +63 912 345 6789</div>
+                    <div>📧 hello@munch.com</div>
+                </div>
+            </section>
+            
+        </main>
+    </div> 
+
+    <div id="toastContainer" class="toast-container"></div>
+    <div id="couponModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">🎁</div>
+            <h2 id="modalCouponTitle">Claim Coupon?</h2>
+            <p id="modalCouponDesc" style="color: #666; margin: 15px 0 25px 0; font-size: 14px;">
+                Add this discount to your wallet to use on your next order!
+            </p>
+            <button class="btn-confirm-claim" onclick="confirmClaim()">Yes, Claim It!</button>
+            <br>
+            <button class="btn-cancel-claim" onclick="closeModal()">Maybe Later</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

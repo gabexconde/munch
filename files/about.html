@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - munch.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="order.html">Order</a>
+            <a href="promos.html">Promos</a>
+            <a href="about.html" class="active">About</a>
+        </div>
+       <div class="user-profile">
+            <a href="developers.html" class="dev-info-icon" title="About Developers">i</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <main class="main-content">
+            <h1 class="page-title">Our Story 📖</h1>
+            
+            <div class="info-card">
+                <h2>Welcome to Magical Munch</h2>
+                <p>Magical Munch started with a simple idea: to deliver high-quality, delicious meals right to your doorstep as fast as possible. We believe that good food brings people together, and our mission is to make sure you never have to wait long for a magical dining experience.</p>
+                <br>
+                <h2>Our Mission</h2>
+                <p>To provide quick, reliable, and exceptionally tasty food delivery services while maintaining the highest standards of food safety and customer service.</p>
+                <br>
+                <h2>Why Choose Us?</h2>
+                <p>We source our ingredients locally, ensuring that every dish we prepare is fresh. Our platform is designed by passionate developers to make your ordering process as smooth and seamless as possible.</p>
+            </div>
+        </main>
+        
+   
+    </div>
+
+  <div id="checkoutModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 450px; text-align: left; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2 style="color: var(--text-dark);">Checkout 🧾</h2>
+                <button onclick="closeCheckout()" style="background: none; border: none; font-size: 20px; cursor: pointer;">✕</button>
+            </div>
+            
+            <form id="checkoutForm" onsubmit="event.preventDefault();" style="margin-bottom: 20px;">
+                <h4 style="margin-bottom: 10px; color: var(--primary-orange);">Delivery Details</h4>
+                <div style="margin-bottom: 10px;">
+                    <label style="font-size: 13px; font-weight: 600;">Full Name</label>
+                    <input type="text" id="custName" placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label style="font-size: 13px; font-weight: 600;">Delivery Address</label>
+                    <input type="text" id="custAddress" placeholder="Enter complete address" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
+                </div>
+                <div>
+                    <label style="font-size: 13px; font-weight: 600;">Phone Number</label>
+                    <input type="number" id="custPhone" placeholder="09xxxxxxxxx" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; font-family: 'Poppins', sans-serif;">
+                </div>
+            </form>
+
+            <h4 style="margin-bottom: 10px; color: var(--primary-orange);">Order Summary</h4>
+            
+            <table style="width: 100%; text-align: left; border-collapse: collapse; margin-bottom: 15px;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #eee; color: var(--text-light); font-size: 13px;">
+                        <th style="padding-bottom: 8px;">Item</th>
+                        <th style="padding-bottom: 8px;">Qty</th>
+                        <th style="padding-bottom: 8px; text-align: right;">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="checkoutTableBody">
+                    </tbody>
+            </table>
+
+            <div style="border-top: 2px dashed #EEE; padding-top: 15px; font-size: 14px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Subtotal</span>
+                    <span id="summarySubtotal">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Delivery Fee</span>
+                    <span>$2.00</span>
+                </div>
+                <div id="summaryDiscountRow" style="display: none; justify-content: space-between; margin-bottom: 8px; color: #27AE60; font-weight: 600;">
+                    <span>Discount Applied</span>
+                    <span id="summaryDiscountAmount">-$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 20px; font-weight: 800; color: var(--text-dark);">
+                    <span>Total</span>
+                    <span id="summaryTotal" style="color: var(--primary-orange);">$0.00</span>
+                </div>
+            </div>
+
+            <button class="btn-confirm-claim" onclick="placeOrder()" style="margin-top: 20px;">Confirm & Place Order</button>
+        </div>
+    </div>
+    
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
