@@ -60,17 +60,25 @@ function showToast(message, type = 'success') {
 // ADD / DELETE ORDER
 // ==========================================
 function addOrder(foodName, category, price, quantity, deliveryTime, rating) {
-    // PREVENT GHOST/NULL ORDERS: If foodName is empty or 'null', stop right here.
     if (!foodName || foodName === 'null') return;
-
-    // Safety check in case localStorage was corrupted
     if (!Array.isArray(orders)) orders = [];
+
+    // AUTO-FETCH IMAGE: Hahanapin niya yung image sa HTML card based sa food name
+    let imageSrc = '';
+    document.querySelectorAll('.food-card').forEach(card => {
+        const titleElement = card.querySelector('h4');
+        if (titleElement && titleElement.textContent.trim() === foodName) {
+            const imgElement = card.querySelector('img');
+            if (imgElement) imageSrc = imgElement.getAttribute('src');
+        }
+    });
 
     const existingOrder = orders.find(order => order.foodName === foodName);
 
     if (existingOrder) {
         existingOrder.quantity += parseInt(quantity);
         existingOrder.subtotal = existingOrder.price * existingOrder.quantity;
+        if (imageSrc) existingOrder.imageSrc = imageSrc; // Update image just in case
     } else {
         const order = {
             id: Date.now(),
@@ -80,7 +88,8 @@ function addOrder(foodName, category, price, quantity, deliveryTime, rating) {
             quantity: parseInt(quantity),
             subtotal: parseFloat(price) * parseInt(quantity),
             deliveryTime: parseInt(deliveryTime),
-            rating: parseFloat(rating)
+            rating: parseFloat(rating),
+            imageSrc: imageSrc // I-save natin ang image link dito
         };
         orders.push(order);
     }
@@ -268,6 +277,7 @@ function renderTable() {
     const emptyMessage = document.getElementById('emptyMessage');
     if (!tableBody) return;
 
+    // Linisin muna ang mga luma para hindi mag-duplicate
     const items = tableBody.querySelectorAll('.order-item');
     items.forEach(item => item.remove());
 
@@ -275,30 +285,35 @@ function renderTable() {
         if (emptyMessage) emptyMessage.style.display = 'flex';
         return;
     }
+    
     if (emptyMessage) emptyMessage.style.display = 'none';
 
     orders.forEach(order => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'order-item';
-        // Adjusted inner styling to match your custom aesthetic
+        
+        // Check kung may image na na-save, kung wala, fallback sa utensils icon
+        const imgHTML = order.imageSrc 
+            ? `<img src="${order.imageSrc}" alt="${order.foodName}" style="width: 100%; height: 100%; object-fit: cover;">`
+            : `<i data-lucide="utensils"></i>`;
+
         itemDiv.innerHTML = `
-            <div class="item-img" style="width: 65px; height: 65px; border-radius: 16px; background: var(--light-orange); display: flex; align-items: center; justify-content: center; color: var(--primary-orange); flex-shrink: 0;">
-                <i data-lucide="utensils" style="width: 28px; height: 28px;"></i>
+            <div class="item-img" style="overflow: hidden; padding: 0; background: transparent;">
+                ${imgHTML}
             </div>
-            <div class="item-details" style="flex: 1;">
-                <h4 style="font-size: 15px; margin: 0; color: var(--text-dark); font-weight: 600;">${order.foodName}</h4>
-                <p style="font-size: 13px; color: var(--text-light); margin: 2px 0;">Qty: ${order.quantity}</p>
-                <strong style="color: var(--primary-orange); font-size: 16px;">$${order.subtotal.toFixed(2)}</strong>
+            <div class="item-details">
+                <h4>${order.foodName}</h4>
+                <p>Qty: ${order.quantity}</p>
+                <strong>$${order.subtotal.toFixed(2)}</strong>
             </div>
-            <button class="btn-delete" onclick="deleteOrder(${order.id})" style="background: #FFE0D5; color: #E74C3C; border: none; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">
-                <i data-lucide="trash-2" style="width: 18px; height: 18px;"></i>
+            <button class="btn-delete" onclick="deleteOrder(${order.id})">
+                <i data-lucide="trash-2"></i>
             </button>
         `;
         tableBody.appendChild(itemDiv);
     });
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 // ==========================================
@@ -497,21 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Fix for the double-fire issue
-        document.querySelectorAll('.btn-add-card').forEach(btn => {
-            if (btn.hasAttribute('data-food')) {
-                btn.addEventListener('click', () => {
-                    addOrder(
-                        btn.getAttribute('data-food'),
-                        btn.getAttribute('data-cat'),
-                        btn.getAttribute('data-price'),
-                        btn.getAttribute('data-qty'),
-                        btn.getAttribute('data-time'),
-                        btn.getAttribute('data-rating')
-                    );
-                });
-            }
-        });
+       
 
         // Developer Image Fallback logic
         document.querySelectorAll('.dev-img').forEach(img => {
@@ -543,3 +544,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn("Munch UI Init warning: Some elements might not exist on this page.", err);
     }
 });
+
+// Siguraduhin na ito ang nasa pinakataas ng script.js pagkatapos ng variables
+window.addOrder = addOrder;
+window.deleteOrder = deleteOrder;
+window.renderTable = renderTable; // Idagdag mo ito
