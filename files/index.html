@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>munch. - Magical Food Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
+            <div class="logo-box">
+                <i data-lucide="utensils" class="text-white icon-24"></i>
+            </div>
+            munch.
         </div>
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
@@ -20,58 +23,163 @@
             <a href="about.html">About</a>
         </div>
         <div class="user-profile">
-            <a href="developers.html" class="dev-info-icon" title="About Developers">i</a>
+            <a href="developers.html" class="dev-info-icon" title="About Developers">
+                <i data-lucide="info" class="icon-20"></i>
+            </a>
         </div>
     </nav>
 
-    <div class="dashboard-layout" style="display: block; overflow-y: auto;">
-        <main class="main-content" style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+    <div class="dashboard-layout">
+        <main class="main-content">
             
-            <section class="banner" style="margin-top: 100px; text-align: center; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
-                <div class="homebanner">  <img src="images/logo.png" alt="MunchGrabz Logo"> munch.</div>
-                <div>
-                    <h2 style="font-size: 48px; margin: 10px 0;">Satisfy Your Cravings,<br><strong>Delivered Fast.</strong></h2>
-                    <p style=" font-size: 18px; color: var(--text-dark); margin-bottom: 30px;">Welcome to munch. – Your Magical Food Hub</p>
-                    <button class="claim-btn" onclick="window.location.href='order.html'" style="font-size: 20px; padding: 15px 40px;">Order Now</button>
+            <section class="hero-section">
+                <div class="homebanner">
+                    munch.
+                </div>
+                <h2>Satisfy Your Cravings,<br><strong>Delivered Fast.</strong></h2>
+                <p>Welcome to munch. – Your Magical Food Hub. Experience the fastest and most delicious delivery service in town.</p>
+                
+                <button class="claim-btn" id="orderNowBtn">
+                    <i data-lucide="shopping-bag" class="icon-20"></i> Order Now
+                </button>
+            </section>
+
+            <section class="features-section">
+                <h3>How to munch.</h3>
+                <p>Three simple steps to satisfy your cravings</p>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon"><i data-lucide="menu"></i></div>
+                        <h4>Browse & Choose</h4>
+                        <p>Explore thousands of local restaurants and fast food favorites in your area.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon"><i data-lucide="credit-card"></i></div>
+                        <h4>Order & Pay</h4>
+                        <p>Securely checkout with multiple payment options or Cash on Delivery.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon"><i data-lucide="smile"></i></div>
+                        <h4>Eat & Enjoy</h4>
+                        <p>Track your rider in real-time and enjoy your food hot and fresh at your door.</p>
+                    </div>
                 </div>
             </section>
-                <div class="promotex"> Promo Vouchers</div>
-            <section class="banner" style="margin-top: 40px;">
+            
+            <div class="promotex">
+                <i data-lucide="ticket" class="text-primary icon-36"></i>
+                Promo Vouchers
+            </div>
+
+            <section class="banner">
                 <div>
                     <p>Limited time! Lent Season Special</p>
                     <h2>Get Mahal na Araw Discount <strong>40%</strong></h2>
-                    <button class="claim-btn" data-id="lent" onclick="claimCoupon('lent', event)">Claim Coupon</button>
+                    <button class="claim-btn" data-id="lent">
+                        <i data-lucide="gift" class="icon-18"></i> Claim Coupon
+                    </button>
                 </div>
-                <div style="font-size: 80px;">✝️</div>
+                <div>
+                    <i data-lucide="flame" class="icon-80 opacity-90"></i>
+                </div>
             </section>
 
-            <section style="margin-top: 60px; text-align: center; padding: 40px; background: white; border-radius: 20px; box-shadow: var(--shadow);">
-                <h3 style="color: var(--primary-orange); margin-bottom: 10px; font-size: 28px;">Get in Touch 📞</h3>
-                <p style="color: var(--text-dark); margin-bottom: 25px;">Have questions? We'd love to hear from you!</p>
-                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; color: var(--text-dark); font-weight: 600;">
-                    <div>📍 San Pablo City, Calabarzon</div>
-                    <div>📱 +63 912 345 6789</div>
-                    <div>📧 hello@munch.com</div>
+            <section class="features-section">
+                <h3>Why Choose munch.?</h3>
+                <p>We deliver more than just food.</p>
+                <div class="steps-grid">
+                    <div class="step-card border-rad-16">
+                        <div class="step-icon bg-fast"><i data-lucide="zap"></i></div>
+                        <h4>Lightning Fast</h4>
+                        <p>Hot food delivered to your door in 30 minutes or less. We respect your hunger.</p>
+                    </div>
+                    <div class="step-card border-rad-16">
+                        <div class="step-icon bg-safe"><i data-lucide="shield-check"></i></div>
+                        <h4>Safe & Hygienic</h4>
+                        <p>Our partner restaurants strictly follow top-tier health and hygiene standards.</p>
+                    </div>
+                    <div class="step-card border-rad-16">
+                        <div class="step-icon bg-star"><i data-lucide="star"></i></div>
+                        <h4>Top Rated Partners</h4>
+                        <p>Curated list of the best-reviewed local spots and international cuisines.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h3>Get in Touch</h3>
+                <p>Have questions? We'd love to hear from you!</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                        <div class="contact-text">San Pablo City, Calabarzon</div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon"><i data-lucide="phone"></i></div>
+                        <div class="contact-text">+63 912 345 6789</div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon"><i data-lucide="mail"></i></div>
+                        <div class="contact-text">hello@munch.com</div>
+                    </div>
                 </div>
             </section>
             
-        </main>
-    </div> 
+            <footer class="site-footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="utensils" class="text-white icon-20"></i>
+                        </div>
+                        munch.
+                    </div>
+                    <p class="footer-desc">Your magical food hub delivering happiness right to your doorstep. Fast, reliable, and always delicious.</p>
+                    
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="order.html">Order</a>
+                        <a href="promos.html">Promos</a>
+                        <a href="about.html">About Us</a>
+                        <a href="developers.html">Developers</a>
+                    </div>
+
+                    <div class="footer-social">
+                        <i data-lucide="facebook"></i>
+                        <i data-lucide="instagram"></i>
+                        <i data-lucide="twitter"></i>
+                    </div>
+
+                    <div class="footer-bottom">
+                        &copy; 2026 munch. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+
+        </main> </div> 
 
     <div id="toastContainer" class="toast-container"></div>
+    
     <div id="couponModal" class="modal-overlay">
         <div class="modal-content">
-            <div class="modal-icon">🎁</div>
+            <div class="modal-icon">
+                <i data-lucide="gift" class="icon-40"></i>
+            </div>
             <h2 id="modalCouponTitle">Claim Coupon?</h2>
-            <p id="modalCouponDesc" style="color: #666; margin: 15px 0 25px 0; font-size: 14px;">
+            <p class="modal-desc mb-25 font-s-15">
                 Add this discount to your wallet to use on your next order!
             </p>
-            <button class="btn-confirm-claim" onclick="confirmClaim()">Yes, Claim It!</button>
-            <br>
-            <button class="btn-cancel-claim" onclick="closeModal()">Maybe Later</button>
+            <button class="btn-confirm-claim" id="confirmClaimCouponBtn">Yes, Claim It!</button>
+            <button class="btn-cancel-claim" id="cancelClaimCouponBtn">Maybe Later</button>
         </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -4,65 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - munch.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
-        </div>
+        <a href="index.html" class="logo">
+            <div class="logo-box">
+                <i data-lucide="utensils" class="text-white icon-22"></i>
+            </div>
+            munch.
+        </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="order.html">Order</a>
             <a href="promos.html">Promos</a>
             <a href="about.html" class="active">About</a>
         </div>
-       <div class="user-profile">
-            <a href="developers.html" class="dev-info-icon" title="About Developers">i</a>
+        <div class="user-profile">
+            <a href="developers.html" class="dev-info-icon" title="About Developers">
+                <i data-lucide="info" class="icon-20"></i>
+            </a>
         </div>
     </nav>
 
-    <div class="dashboard-layout" style="display: block; overflow-y: auto;">
-        <main class="main-content" style="max-width: 1100px; margin: 0 auto; padding: 40px 20px;">
-            
-            <section class="about-hero" style="text-align: center; padding: 60px 0 40px 0;">
-                <h1 style="font-size: 48px; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;">Our Story 📖</h1>
-                <p style="color: var(--text-light); font-size: 18px;">Bringing magic to your doorstep, one bite at a time.</p>
-            </section>
-            
-            <div class="about-card-split">
-                <div class="about-text">
-                    <h2 style="color: var(--primary-orange); font-size: 32px; margin-bottom: 20px;">Welcome to Magical Munch</h2>
-                    <p>Magical Munch started with a simple idea: to deliver high-quality, delicious meals right to your doorstep as fast as possible. We believe that good food brings people together, and our mission is to make sure you never have to wait long for a magical dining experience.</p>
+    <section class="hero">
+        <h1 class="reveal">The Magic Behind<br><span>Your Meal.</span></h1>
+        <p class="reveal">We don't just deliver food; we deliver experiences, one curated bite at a time.</p>
+    </section>
+
+    <section class="story-section">
+        <div class="story-grid">
+            <div class="magic-visual reveal">
+                <div class="magic-box">
+                    <i data-lucide="sparkles"></i>
                 </div>
-                <div class="about-visual">
-                    <div class="magic-box">✨🍔✨</div>
+            </div>
+            <div class="story-text reveal">
+                <h2>A Hunger for Innovation</h2>
+                <p>Magical Munch was born from a late-night craving in 2021. We realized that while food delivery existed, the "magic" of dining out was missing from the doorstep experience.</p>
+                <p>Our team spent a year building a lightning-fast logistics network and partnering with kitchens that prioritize soul over mass-production. Today, we serve thousands of happy munchers daily.</p>
+                <div class="flex-gap-20 mt-30">
+                    <div class="text-center">
+                        <span class="stat-val">50k+</span>
+                        <small class="stat-lbl">Orders</small>
+                    </div>
+                    <div class="text-center border-left pl-20">
+                        <span class="stat-val">120+</span>
+                        <small class="stat-lbl">Kitchens</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="reveal text-center mb-60">
+            <h2 class="heading-32">Our Journey</h2>
+            <p class="text-light">How we grew the magic.</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2021</span>
+                    <h3>The Spark</h3>
+                    <p>Magical Munch was founded in a small garage with just 3 riders and a dream.</p>
                 </div>
             </div>
 
-            <div class="about-grid">
-                <div class="grid-item">
-                    <div class="grid-icon">🎯</div>
-                    <h3>Our Mission</h3>
-                    <p>To provide quick, reliable, and exceptionally tasty food delivery services while maintaining high standards.</p>
-                </div>
-                <div class="grid-item">
-                    <div class="grid-icon">🌿</div>
-                    <h3>Fresh Ingredients</h3>
-                    <p>We source our ingredients locally, ensuring that every dish we prepare is fresh and sustainably handled.</p>
-                </div>
-                <div class="grid-item">
-                    <div class="grid-icon">🚀</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Our platform is designed to make your ordering process as smooth and seamless as possible.</p>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2022</span>
+                    <h3>The Growth</h3>
+                    <p>Expanded to 5 cities and reached our first 10,000 satisfied munchers.</p>
                 </div>
             </div>
 
-        </main>
-    </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023</span>
+                    <h3>Magic Tech</h3>
+                    <p>Launched our AI-driven routing system, reducing delivery times to under 25 minutes.</p>
+                </div>
+            </div>
 
-    <div id="toastContainer" class="toast-container"></div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2024</span>
+                    <h3>The Future</h3>
+                    <p>Expanding our reach nationally and introducing eco-friendly packaging for all orders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="reveal text-center mb-50">
+            <h2 class="heading-32">Got Questions?</h2>
+            <p class="text-light">Everything you need to know about the munch experience.</p>
+        </div>
+
+        <div class="faq-list reveal">
+            <div class="faq-item">
+                <div class="faq-header">
+                    Is the food always fresh?
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </div>
+                <div class="faq-content">
+                    Absolutely! We use thermal-insulated bags and smart routing to ensure your meal arrives at the exact temperature the chef intended.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    What happens if my order is late?
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </div>
+                <div class="faq-content">
+                    If we're late by more than 15 minutes past the estimated time, the delivery fee is on us! We value your time as much as your appetite.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    Do you have healthy options?
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </div>
+                <div class="faq-content">
+                    Yes! You can filter by "Healthy" or "Veggie" in our Order page to see a curated list of nutritious and delicious meals.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section reveal">
+        <h2>Ready for a taste?</h2>
+        <p>Join over 50,000 people who choose magic every single day.</p>
+        <a href="order.html" class="cta-btn">Start My Order</a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    <i data-lucide="utensils" class="text-white icon-20"></i>
+                </div>
+                munch.
+            </div>
+            <p class="footer-desc">Your magical food hub delivering happiness right to your doorstep. Fast, reliable, and always delicious.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="order.html">Order</a>
+                <a href="promos.html">Promos</a>
+                <a href="about.html">About Us</a>
+                <a href="developers.html">Developers</a>
+            </div>
+            <div class="footer-social">
+                <i data-lucide="facebook"></i>
+                <i data-lucide="instagram"></i>
+                <i data-lucide="twitter"></i>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 munch. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
 </body>
 </html>

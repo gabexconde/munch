@@ -4,72 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developers - munch.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    
     <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="MunchGrabz Logo"> munch.
-        </div>
+        <a href="index.html" class="logo">
+            <div class="logo-box">
+                <i data-lucide="utensils" class="text-white icon-22"></i>
+            </div>
+            munch.
+        </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="promos.html">Promos</a>
             <a href="order.html">Order</a>
+            <a href="promos.html">Promos</a>
             <a href="about.html">About</a>
         </div>
         <div class="user-profile">
-            <a href="developers.html" class="dev-info-icon" title="about developers">i</a>
+            <a href="developers.html" class="dev-info-icon" title="About Developers">
+                <i data-lucide="info" class="icon-20"></i>
+            </a>
         </div>
     </nav>
 
-    <main class="dev-page">
-        <h1 class="page-title" style="text-align: center; margin-top: 20px;">Developers</h1>
-        
-        <div class="carousel-wrapper">
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
-            
-            <div class="carousel-container">
-                <div class="carousel-track" id="devTrack">
-                    
-                    <div class="dev-card">
-                        <div class="dev-photo">
-                            <img src="images/dev1.jpg" alt="John Harold Beladas">
-                        </div>
-                        <h2>John Harold Beladas</h2>
-                        <p class="dev-section">BSINFOTECH 2D</p>
-                        <p class="dev-role">Lead Developer / UI Design</p>
-                        <p class="dev-desc">Passionate about web development, coding in C#, and building interactive interfaces.</p>
-                    </div>
+    <header class="dev-header">
+        <h1 class="reveal">Meet the Creators</h1>
+        <p class="reveal">The passionate team working behind the scenes to bring magic to your dining experience.</p>
+    </header>
 
-                    <div class="dev-card">
-                        <div class="dev-photo">
-                            <img src="images/dev2.jpg" alt="Developer Two">
-                        </div>
-                        <h2>Gabriel AE Ron Exconde</h2>
-                        <p class="dev-section">BSINFOTECH 2D</p>
-                        <p class="dev-role">Backend / Database</p>
-                        <p class="dev-desc">Ensures everything runs smoothly behind the scenes and manages data flow.</p>
-                    </div>
+    <section class="carousel-outer reveal">
+        <button class="nav-btn" id="prev-slide-btn">
+            <i data-lucide="chevron-left" class="icon-28"></i>
+        </button>
 
-                    <div class="dev-card">
+        <div class="carousel-view">
+            <div class="carousel-track" id="devTrack">
+                
+                <div class="dev-card">
+                    <div class="dev-photo-container">
                         <div class="dev-photo">
-                            <img src="images/dev3.jpg" alt="Developer Three">
+                            <img src="images/dev1.jpg" alt="John Harold Beladas" class="dev-img">
+                            <div class="dev-photo-fallback hidden"><i data-lucide="user"></i></div>
                         </div>
-                        <h2>Cyrus Taclan</h2>
-                        <p class="dev-section">BSINFOTECH 2D</p>
-                        <p class="dev-role">QA & Testing</p>
-                        <p class="dev-desc">Finds the bugs before they find you. Keeps the project polished and error-free.</p>
                     </div>
-
+                    <p class="section-tag">BSINFOTECH 2D</p>
+                    <h2>John Harold Beladas</h2>
+                    <span class="role-badge">Lead Developer / UI Design</span>
+                    <p class="dev-desc">Passionate about web development, coding in C#, and building interactive interfaces that prioritize the user's journey.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UI/UX</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Frontend</span>
+                        <span class="skill-tag">CSS Art</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-lucide="github" class="icon-20"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="linkedin" class="icon-20"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="mail" class="icon-20"></i></a>
+                    </div>
                 </div>
+
+                <div class="dev-card">
+                    <div class="dev-photo-container">
+                        <div class="dev-photo">
+                            <img src="images/dev2.jpg" alt="Gabriel AE Ron Exconde" class="dev-img">
+                            <div class="dev-photo-fallback hidden"><i data-lucide="user"></i></div>
+                        </div>
+                    </div>
+                    <p class="section-tag">BSINFOTECH 2D</p>
+                    <h2>Gabriel AE Ron Exconde</h2>
+                    <span class="role-badge">Backend / Database Architect</span>
+                    <p class="dev-desc">Ensures everything runs smoothly behind the scenes, managing data flow and optimizing performance for thousands of users.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">API Design</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-lucide="github" class="icon-20"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="database" class="icon-20"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="mail" class="icon-20"></i></a>
+                    </div>
+                </div>
+
+                <div class="dev-card">
+                    <div class="dev-photo-container">
+                        <div class="dev-photo">
+                            <img src="images/dev3.jpg" alt="Cyrus Taclan" class="dev-img">
+                            <div class="dev-photo-fallback hidden"><i data-lucide="user"></i></div>
+                        </div>
+                    </div>
+                    <p class="section-tag">BSINFOTECH 2D</p>
+                    <h2>Cyrus Taclan</h2>
+                    <span class="role-badge">QA & Security Analyst</span>
+                    <p class="dev-desc">The bug hunter. Cyrus ensures the platform is polished, secure, and completely error-free before it ever reaches your screen.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Testing</span>
+                        <span class="skill-tag">Security</span>
+                        <span class="skill-tag">Debugging</span>
+                        <span class="skill-tag">Analytics</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-lucide="github" class="icon-20"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="shield" class="icon-20"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="mail" class="icon-20"></i></a>
+                    </div>
+                </div>
+
             </div>
-
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
         </div>
-    </main>
 
+        <button class="nav-btn" id="next-slide-btn">
+            <i data-lucide="chevron-right" class="icon-28"></i>
+        </button>
+    </section>
+
+    <footer class="site-footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="utensils" class="text-white icon-20"></i>
+                        </div>
+                        munch.
+                    </div>
+                    <p class="footer-desc">Your magical food hub delivering happiness right to your doorstep. Fast, reliable, and always delicious.</p>
+                    
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="order.html">Order</a>
+                        <a href="promos.html">Promos</a>
+                        <a href="about.html">About Us</a>
+                        <a href="developers.html">Developers</a>
+                    </div>
+
+                    <div class="footer-social">
+                        <i data-lucide="facebook"></i>
+                        <i data-lucide="instagram"></i>
+                        <i data-lucide="twitter"></i>
+                    </div>
+
+                    <div class="footer-bottom">
+                        &copy; 2026 munch. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
 </body>
 </html>
